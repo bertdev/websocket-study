@@ -11,7 +11,7 @@
         <script>
             const messages = document.getElementById("messages");
             const socket = new WebSocket("ws://localhost:8888");
-            socket.onopen = event = console.log("WebSocket is connected", event);
+            socket.onopen = event => console.log("WebSocket is connected", event);
             socket.onmessage = msg => console.log("We received an message: ", msg);
             socket.onerror = error => console.error("WebSocket error: ", error);
             socket.onclose = event => console.log("Disconnected from WebSocket server");
