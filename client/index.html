@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Web Socket Client | Herbert</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <output name="" for="" id="messages"></output>
+        <script>
+            const messages = document.getElementById("messages");
+            const socket = new WebSocket("ws://localhost:8888");
+            socket.onopen = event = console.log("WebSocket is connected", event);
+            socket.onmessage = msg => console.log("We received an message: ", msg);
+            socket.onerror = error => console.error("WebSocket error: ", error);
+            socket.onclose = event => console.log("Disconnected from WebSocket server");
+        </script>
+    </body>
+</html>
